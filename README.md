@@ -1,4 +1,4 @@
 doc
 ===
 
-Documentation
+Documentation for metaborg projects
