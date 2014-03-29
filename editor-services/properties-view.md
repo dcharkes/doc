@@ -15,13 +15,20 @@ Specify the builder `editor-properties`
 	// Gathers the properties for the properties view.
 	editor-properties:
 		(target, position, ast, path, project-path) ->
-			<get-all-editor-properties(pp-[Languge]-string |<language>, project-path)>target
+			<get-all-editor-properties(pp-partial-[Languge]-string |<language>, project-path)>target
 
 Optional: get the same information in hover:
 
 	editor-hover:
 		(target, position, ast, path, project-path) ->
-			<get-editor-properties(pp-[Language]-string |<language>, project-path);properties-to-html>target
+			<get-editor-properties(pp-partial-[Language]-string |<language>, project-path);properties-to-html>target
+
+Lastly `pp-partial-[Language]-string` should be correctly defined.
+
+    pp-partial-[Language]-string =
+      prettyprint-example
+      ; !V([], <id>)
+      ; box2text-string(|120)
 
 ## 2. Customize the property view
 
